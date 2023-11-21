@@ -53,7 +53,8 @@ const Home = () => {
 
       const redirect_uri = `${APP_CLIENT_URL}/authenticate`;
       const state = Date.now();
-      const authorizationUrl = `https://${searchParams.shop}/admin/oauth/authorize?client_id=${SHOPIFY_CLIENT_ID}&scopes=${SHOPIFY_SCOPES}&redirect_uri=${redirect_uri}&state=${state}`;
+      const authorizationUrl = `https://${searchParams.shop}/admin/oauth/authorize?client_id=${SHOPIFY_CLIENT_ID}&scope=${SHOPIFY_SCOPES}&redirect_uri=${redirect_uri}&state=${state}`;
+
       localStorage.setItem('state', state);
       window.location.replace(authorizationUrl);
     })();
